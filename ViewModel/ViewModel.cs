@@ -80,12 +80,14 @@ namespace SimpleTimer.ViewModels
       this.SecondsAlreadyPassed = this.SecondsAlreadyPassed.Add(this.LabelTimerInterval);
       this.CurrentTime = this.SecondsAlreadyPassed.ToString(@"hh\:mm\:ss"); // DateTime.Now.ToLongTimeString()
 
-      DateTime RingTime = HelperClass.DateTimeConverter(this.HoursLimitProp);
+      DateTime ringTime = HelperClass.DateTimeConverter(this.HoursLimitProp);
 
       //Debug.WriteLine("Current time: " + CurrentTime);
       //Debug.WriteLine("Ring time: " + RingTime.ToLongTimeString());
 
-      if (this.CurrentTime == this.HoursLimitProp)
+      double currentTime = DateTime.Parse(this.CurrentTime, CultureInfo.InvariantCulture).TimeOfDay.TotalSeconds;
+
+      if (currentTime == ringTime.TimeOfDay.TotalSeconds)
       {
         HelperClass.PlaySound();
       }

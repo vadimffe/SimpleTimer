@@ -8,17 +8,15 @@ namespace SimpleTimer.Models.HelperClasses
 {
   public static class HelperClass
   {
-    public static DateTime DateTimeConverter(string TimeAsString)
+    public static DateTime DateTimeConverter(string timeAsString)
     {
-      DateTime dt;
-      if (!DateTime.TryParseExact(TimeAsString, "HH:mm", CultureInfo.InvariantCulture,
-                                                    DateTimeStyles.None, out dt))
+      if (!DateTime.TryParse(timeAsString, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime ringTime))
       {
         // handle validation error
       }
-      TimeSpan time = dt.TimeOfDay;
+      TimeSpan time = ringTime.TimeOfDay;
 
-      return dt;
+      return ringTime;
     }
 
     public static TimeSpan ParseToTimeSpan(string TimeAsString)
@@ -37,8 +35,8 @@ namespace SimpleTimer.Models.HelperClasses
     public static TimeSpan ParseToTimeSpanRingTime()
     {
       TimeSpan result = new SettingsConnector().TryReadString(Properties.StringResources.TimeLimit,
-               out string timeAsString)
-                    ? DateTime.Parse(timeAsString, System.Globalization.CultureInfo.InvariantCulture).TimeOfDay
+               out string timeAsString) && DateTime.TryParse(timeAsString, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime timeAsTimeSpan)
+                    ? timeAsTimeSpan.TimeOfDay
                     : TimeSpan.Zero;
 
       return result;
