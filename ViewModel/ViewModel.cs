@@ -15,7 +15,7 @@ namespace SimpleTimer.ViewModels
     public TimerViewModel TimerViewModel { get; set; }
 
     // Set the timer offset to 50 seconds
-    private static readonly TimeSpan StartFromSecConfProp = TimeSpan.FromSeconds(50);
+    private static readonly TimeSpan StartFromSecConfProp = TimeSpan.FromSeconds(0);
     private TimeSpan SecondsAlreadyPassed = TimeSpan.Zero;
 
     private static Action _timerAction;

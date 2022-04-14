@@ -2,267 +2,267 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converter="clr-namespace:SimpleTimer.Resources.Converter">
 
-    <!--UPDATE BUTTON-->
+  <!--UPDATE BUTTON-->
 
-    <Style TargetType="{x:Type Button}"  x:Key="Pause_button">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="#FFB2C6F3" />
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Height"  Value="40" />
-        <Setter Property="Width"  Value="120" />
-        <Setter Property="FontWeight"  Value="Bold" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border CornerRadius="2,2,2,2" Background="{TemplateBinding Background}" 
+  <Style TargetType="{x:Type Button}"  x:Key="Pause_button">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="#FFB2C6F3" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Height"  Value="40" />
+    <Setter Property="Width"  Value="120" />
+    <Setter Property="FontWeight"  Value="Bold" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border CornerRadius="2,2,2,2" Background="{TemplateBinding Background}" 
                                         HorizontalAlignment="Center" Padding="20,10,20,10" VerticalAlignment="Center">
-                        <Grid>
-                            <TextBlock><Run Foreground="{TemplateBinding Foreground}" x:Name="a" Text="P"/><Run Text=" "/>
+            <Grid>
+              <TextBlock><Run Foreground="{TemplateBinding Foreground}" x:Name="a" Text="P"/><Run Text=" "/>
                                 <Run Foreground="{TemplateBinding Foreground}" x:Name="b" Text="A"/><Run Text=" "/>
                                 <Run Foreground="{TemplateBinding Foreground}" x:Name="c" Text="U"/><Run Text=" "/>
                                 <Run Foreground="{TemplateBinding Foreground}" x:Name="d" Text="S"/><Run Text=" "/>
                                 <Run Foreground="{TemplateBinding Foreground}" x:Name="e" Text="E"/>
-                            </TextBlock>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+              </TextBlock>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+              <BeginStoryboard>
+                <Storyboard>
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="a"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
-                                                                Duration="0:0:0.5" BeginTime="0:0:0.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1" BeginTime="0:0:0.1" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="b"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
-                                                                Duration="0:0:0.5" BeginTime="0:0:1" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1" BeginTime="0:0:0.2" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="c"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
-                                                                Duration="0:0:0.5" BeginTime="0:0:1.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1" BeginTime="0:0:0.3" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="d"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
-                                                                Duration="0:0:0.5" BeginTime="0:0:2" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1" BeginTime="0:0:0.4" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="e"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
-                                                                Duration="0:0:0.5" BeginTime="0:0:2.5" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1" BeginTime="0:0:0.5" />
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+              <BeginStoryboard>
+                <Storyboard>
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="e"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
-                                                                Duration="0:0:0.5"  BeginTime="0:0:0.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1"  BeginTime="0:0:0.1" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="d"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
-                                                                Duration="0:0:0.5"  BeginTime="0:0:1" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1"  BeginTime="0:0:0.2" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="c"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
-                                                                Duration="0:0:0.5"  BeginTime="0:0:1.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1"  BeginTime="0:0:0.3" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="b"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
-                                                                Duration="0:0:0.5"  BeginTime="0:0:2" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                                                Duration="0:0:0.1"  BeginTime="0:0:0.4" />
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="a"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
-                                                                Duration="0:0:0.5" BeginTime="0:0:2.5" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                                                                Duration="0:0:0.1" BeginTime="0:0:0.5" />
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
 
-    <!--UPDATE BUTTON-->
-    
-    <Style TargetType="{x:Type Button}" x:Key="Update_button">
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="#FFB2C6F3" />
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Height"  Value="40" />
-        <Setter Property="Width"  Value="120" />
-        <Setter Property="FontWeight"  Value="Bold" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border CornerRadius="2,2,2,2" Background="{TemplateBinding Background}" 
+  <!--UPDATE BUTTON-->
+
+  <Style TargetType="{x:Type Button}" x:Key="Update_button">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="#FFB2C6F3" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="Height"  Value="40" />
+    <Setter Property="Width"  Value="120" />
+    <Setter Property="FontWeight"  Value="Bold" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type Button}">
+          <Border CornerRadius="2,2,2,2" Background="{TemplateBinding Background}" 
                                         HorizontalAlignment="Center" Padding="10,10,10,10" VerticalAlignment="Center">
-                        <Grid>
-                            <TextBlock><Run Foreground="{TemplateBinding Foreground}" x:Name="a" Text="U"/>
+            <Grid>
+              <TextBlock><Run Foreground="{TemplateBinding Foreground}" x:Name="a" Text="U"/>
                                 <Run Text=" "/><Run Foreground="{TemplateBinding Foreground}" x:Name="b" Text="P"/>
                                 <Run Text=" "/><Run Foreground="{TemplateBinding Foreground}" x:Name="c" Text="D"/>
                                 <Run Text=" "/><Run Foreground="{TemplateBinding Foreground}" x:Name="d" Text="A"/>
                                 <Run Text=" "/><Run Foreground="{TemplateBinding Foreground}" x:Name="e" Text="T"/>
                                 <Run Text=" "/><Run Foreground="{TemplateBinding Foreground}" x:Name="f" Text="E"/>
-                            </TextBlock>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+              </TextBlock>
+            </Grid>
+          </Border>
+          <ControlTemplate.Triggers>
+            <EventTrigger RoutedEvent="UIElement.MouseEnter">
+              <BeginStoryboard>
+                <Storyboard>
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="a"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
                                                                 Duration="0:0:0.5" BeginTime="0:0:0.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="b"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
                                                                 Duration="0:0:0.5" BeginTime="0:0:1" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="c"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
                                                                 Duration="0:0:0.5" BeginTime="0:0:1.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="d"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
                                                                 Duration="0:0:0.5" BeginTime="0:0:2" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="e"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
                                                                 Duration="0:0:0.5" BeginTime="0:0:2.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="f"
                                                                 From="#FFB2C6F3" To="#FFFF9700" 
                                                                 Duration="0:0:0.5" BeginTime="0:0:3" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="UIElement.MouseLeave">
+              <BeginStoryboard>
+                <Storyboard>
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="f"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
                                                                 Duration="0:0:0.5"  BeginTime="0:0:0.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="e"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
                                                                 Duration="0:0:0.5"  BeginTime="0:0:1" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="d"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
                                                                 Duration="0:0:0.5"  BeginTime="0:0:1.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="c"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
                                                                 Duration="0:0:0.5"  BeginTime="0:0:2" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="b"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
                                                                 Duration="0:0:0.5" BeginTime="0:0:2.5" />
-                                    <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                  <ColorAnimation Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="a"
                                                                 From="#FFFF9700" To="#FFB2C6F3"
                                                                 Duration="0:0:0.5" BeginTime="0:0:3" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                </Storyboard>
+              </BeginStoryboard>
+            </EventTrigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
 
-    <!--PLAY BUTTON-->
-    <Viewbox x:Key="PlayButton_icon">
-        <Viewbox.Resources>
-            <!--HINT::Missing import/unknown namespace -->
-            <converter:TimeExceededConverter x:Key="TimeExceededConverter" />
-        </Viewbox.Resources>
-        <Canvas Width="256" Height="256">
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="#FFB2C6F3" Data="F1 M 23.500,0.000 C 24.833,0.000 26.167,0.000 27.500,0.000 C 29.985,1.128 32.570,2.079 34.941,3.410 C 79.059,28.179 123.152,52.992 167.250,77.796 C 189.880,90.525 212.502,103.266 235.146,115.968 C 239.276,118.285 242.380,121.344 242.963,126.260 C 243.729,132.724 240.574,136.982 235.144,140.034 C 168.694,177.382 102.264,214.765 35.808,252.100 C 33.148,253.595 30.274,254.709 27.500,256.000 C 26.167,256.000 24.833,256.000 23.500,256.000 C 15.545,252.948 12.838,249.398 12.836,241.739 C 12.823,165.912 12.823,90.086 12.860,14.260 C 12.861,12.372 13.074,10.403 13.636,8.612 C 15.145,3.799 18.951,1.430 23.500,0.000 Z"/>
+  <!--PLAY BUTTON-->
+  <Viewbox x:Key="PlayButton_icon">
+    <Viewbox.Resources>
+      <!--HINT::Missing import/unknown namespace -->
+      <converter:TimeExceededConverter x:Key="TimeExceededConverter" />
+    </Viewbox.Resources>
+    <Canvas Width="256" Height="256">
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="#FFB2C6F3" Data="F1 M 23.500,0.000 C 24.833,0.000 26.167,0.000 27.500,0.000 C 29.985,1.128 32.570,2.079 34.941,3.410 C 79.059,28.179 123.152,52.992 167.250,77.796 C 189.880,90.525 212.502,103.266 235.146,115.968 C 239.276,118.285 242.380,121.344 242.963,126.260 C 243.729,132.724 240.574,136.982 235.144,140.034 C 168.694,177.382 102.264,214.765 35.808,252.100 C 33.148,253.595 30.274,254.709 27.500,256.000 C 26.167,256.000 24.833,256.000 23.500,256.000 C 15.545,252.948 12.838,249.398 12.836,241.739 C 12.823,165.912 12.823,90.086 12.860,14.260 C 12.861,12.372 13.074,10.403 13.636,8.612 C 15.145,3.799 18.951,1.430 23.500,0.000 Z"/>
 
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent" Data="F1 M 27.500,256.000 C 30.274,254.709 33.148,253.595 35.808,252.100 C 102.264,214.765 168.694,177.382 235.144,140.034 C 240.574,136.982 243.729,132.724 242.963,126.260 C 242.380,121.344 239.276,118.285 235.146,115.968 C 212.502,103.266 189.880,90.525 167.250,77.796 C 123.152,52.992 79.059,28.179 34.941,3.410 C 32.570,2.079 29.985,1.128 27.500,0.000 C 103.667,0.000 179.833,0.000 256.000,0.000 C 256.000,85.333 256.000,170.667 256.000,256.000 C 179.833,256.000 103.667,256.000 27.500,256.000 Z"/>
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent" Data="F1 M 27.500,256.000 C 30.274,254.709 33.148,253.595 35.808,252.100 C 102.264,214.765 168.694,177.382 235.144,140.034 C 240.574,136.982 243.729,132.724 242.963,126.260 C 242.380,121.344 239.276,118.285 235.146,115.968 C 212.502,103.266 189.880,90.525 167.250,77.796 C 123.152,52.992 79.059,28.179 34.941,3.410 C 32.570,2.079 29.985,1.128 27.500,0.000 C 103.667,0.000 179.833,0.000 256.000,0.000 C 256.000,85.333 256.000,170.667 256.000,256.000 C 179.833,256.000 103.667,256.000 27.500,256.000 Z"/>
 
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent" Data="F1 M 23.500,0.000 C 18.951,1.430 15.145,3.799 13.636,8.612 C 13.074,10.403 12.861,12.372 12.860,14.260 C 12.823,90.086 12.823,165.912 12.836,241.739 C 12.838,249.398 15.545,252.948 23.500,256.000 C 15.667,256.000 7.833,256.000 0.000,256.000 C 0.000,170.667 0.000,85.333 0.000,0.000 C 7.833,0.000 15.667,0.000 23.500,0.000 Z"/>
-        </Canvas>
-    </Viewbox>
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent" Data="F1 M 23.500,0.000 C 18.951,1.430 15.145,3.799 13.636,8.612 C 13.074,10.403 12.861,12.372 12.860,14.260 C 12.823,90.086 12.823,165.912 12.836,241.739 C 12.838,249.398 15.545,252.948 23.500,256.000 C 15.667,256.000 7.833,256.000 0.000,256.000 C 0.000,170.667 0.000,85.333 0.000,0.000 C 7.833,0.000 15.667,0.000 23.500,0.000 Z"/>
+    </Canvas>
+  </Viewbox>
 
-    <!--CLOCK FOR TIME EXCEEDED-->
-    <Viewbox x:Key="ClockTimeExceeded_icon">
-        <Viewbox.Resources>
-            <!--HINT::Missing import/unknown namespace -->
-            <converter:TimeExceededConverter x:Key="TimeExceededConverter" />
-        </Viewbox.Resources>
-        <Canvas Width="512" Height="512">
-            <Path Fill="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"
+  <!--CLOCK FOR TIME EXCEEDED-->
+  <Viewbox x:Key="ClockTimeExceeded_icon">
+    <Viewbox.Resources>
+      <!--HINT::Missing import/unknown namespace -->
+      <converter:TimeExceededConverter x:Key="TimeExceededConverter" />
+    </Viewbox.Resources>
+    <Canvas Width="512" Height="512">
+      <Path Fill="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"
                   Data="F1 M 234.781,197.087 C 234.771,197.087 234.761,197.087 234.751,197.087 C 234.751,219.252 234.925,241.419 234.660,263.580 C 234.562,271.817 237.278,278.238 243.118,284.035 C 277.178,317.851 311.052,351.854 344.998,385.784 C 346.528,387.313 348.047,388.885 349.753,390.202 C 361.450,399.234 378.697,393.771 382.977,379.646 C 385.675,370.744 382.910,363.359 376.486,356.948 C 344.520,325.044 312.625,293.069 280.618,261.206 C 278.189,258.787 277.152,256.385 277.174,252.931 C 277.320,229.600 277.251,206.269 277.250,182.937 C 277.249,164.939 277.196,146.940 277.270,128.942 C 277.298,122.220 275.190,116.453 270.083,112.058 C 263.411,106.316 255.698,105.069 247.681,108.466 C 239.437,111.959 234.876,118.531 234.825,127.593 C 234.693,150.757 234.781,173.922 234.781,197.087 Z M 240.000,0.000 C 250.667,0.000 261.333,0.000 272.000,0.000 C 280.717,1.137 289.485,1.980 298.144,3.461 C 346.223,11.682 388.770,31.768 425.202,64.194 C 469.743,103.837 497.602,153.061 508.070,211.893 C 509.726,221.201 510.707,230.628 512.000,240.000 C 512.000,250.667 512.000,261.333 512.000,272.000 C 511.716,273.285 511.270,274.558 511.170,275.858 C 508.147,315.351 496.828,352.328 476.207,386.114 C 435.574,452.687 376.890,493.618 300.077,508.081 C 290.801,509.827 281.363,510.714 272.000,512.000 C 261.333,512.000 250.667,512.000 240.000,512.000 C 233.755,511.228 227.495,510.559 221.267,509.667 C 170.321,502.370 125.302,481.968 86.819,447.783 C 42.368,408.295 14.608,359.194 3.989,300.599 C 2.273,291.136 1.311,281.537 0.000,272.000 C 0.000,261.333 0.000,250.667 0.000,240.000 C 1.119,231.445 1.957,222.843 3.402,214.343 C 12.458,161.089 35.820,115.014 73.751,76.568 C 112.043,37.756 158.122,13.390 211.909,3.933 C 221.215,2.297 230.633,1.295 240.000,0.000 Z">
-            </Path>
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent"
+      </Path>
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent"
                   Data="F1 M 0.000,272.000 C 1.311,281.537 2.273,291.136 3.989,300.599 C 14.608,359.194 42.368,408.295 86.819,447.783 C 125.302,481.968 170.321,502.370 221.267,509.667 C 227.495,510.559 233.755,511.228 240.000,512.000 C 160.000,512.000 80.000,512.000 0.000,512.000 C 0.000,432.000 0.000,352.000 0.000,272.000 Z" />
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent"
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent"
                   Data="F1 M 272.000,512.000 C 281.363,510.714 290.801,509.827 300.077,508.081 C 376.890,493.618 435.574,452.687 476.207,386.114 C 496.828,352.328 508.147,315.351 511.170,275.858 C 511.270,274.558 511.716,273.285 512.000,272.000 C 512.000,352.000 512.000,432.000 512.000,512.000 C 432.000,512.000 352.000,512.000 272.000,512.000 Z" />
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent"
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent"
                   Data="F1 M 512.000,240.000 C 510.707,230.628 509.726,221.201 508.070,211.893 C 497.602,153.061 469.743,103.837 425.202,64.194 C 388.770,31.768 346.223,11.682 298.144,3.461 C 289.485,1.980 280.717,1.137 272.000,0.000 C 352.000,0.000 432.000,0.000 512.000,0.000 C 512.000,80.000 512.000,160.000 512.000,240.000 Z" />
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent"
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent"
                   Data="F1 M 240.000,0.000 C 230.633,1.295 221.215,2.297 211.909,3.933 C 158.122,13.390 112.043,37.756 73.751,76.568 C 35.820,115.014 12.458,161.089 3.402,214.343 C 1.957,222.843 1.119,231.445 0.000,240.000 C 0.000,160.083 0.000,80.166 0.000,0.000 C 80.000,0.000 160.000,0.000 240.000,0.000 Z" />
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent"
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent"
                   Data="F1 M 234.781,197.087 C 234.781,173.922 234.693,150.757 234.825,127.593 C 234.876,118.531 239.437,111.959 247.681,108.466 C 255.698,105.069 263.411,106.316 270.083,112.058 C 275.190,116.453 277.298,122.220 277.270,128.942 C 277.196,146.940 277.249,164.939 277.250,182.937 C 277.251,206.269 277.320,229.600 277.174,252.931 C 277.152,256.385 278.189,258.787 280.618,261.206 C 312.625,293.069 344.520,325.044 376.486,356.948 C 382.910,363.359 385.675,370.744 382.977,379.646 C 378.697,393.771 361.450,399.234 349.753,390.202 C 348.047,388.885 346.528,387.313 344.998,385.784 C 311.052,351.854 277.178,317.851 243.118,284.035 C 237.278,278.238 234.562,271.817 234.660,263.580 C 234.925,241.419 234.751,219.252 234.751,197.087 C 234.761,197.087 234.771,197.087 234.781,197.087 Z" />
 
-        </Canvas>
-    </Viewbox>
+    </Canvas>
+  </Viewbox>
 
-    <!--ICON COLORS-->
-    <SolidColorBrush x:Key="IsSelectedIcon" Color="#FFFF9700"></SolidColorBrush>
-    <SolidColorBrush x:Key="IsNOTSelectedIcon" Color="#FFB2C6F3"></SolidColorBrush>
+  <!--ICON COLORS-->
+  <SolidColorBrush x:Key="IsSelectedIcon" Color="#FFFF9700"></SolidColorBrush>
+  <SolidColorBrush x:Key="IsNOTSelectedIcon" Color="#FFB2C6F3"></SolidColorBrush>
 
 
-    <!--CLOSE BUTTON-->
-    <Viewbox x:Key="CloseButton_icon">
-        <Viewbox.Resources>
-            <!--HINT::Missing import/unknown namespace -->
-            <converter:TimeExceededConverter x:Key="TimeExceededConverter" />
-        </Viewbox.Resources>
-        <Canvas Width="300" Height="300">
-            <!-- Layer 1/<Group>/<Compound Path> -->
-            <Path Fill="Transparent" Data="F1 M 123.794,149.613 C 122.203,150.907 121.305,151.518 120.549,152.271 C 108.339,164.449 96.135,176.634 83.956,188.844 C 80.018,192.792 80.030,197.158 83.959,201.124 C 88.553,205.761 93.189,210.358 97.818,214.961 C 102.477,219.594 106.453,219.583 111.120,214.921 C 123.184,202.872 135.238,190.813 147.301,178.763 C 148.044,178.020 148.824,177.314 149.705,176.478 C 150.584,177.309 151.364,178.013 152.107,178.755 C 164.305,190.946 176.490,203.149 188.697,215.331 C 192.802,219.426 197.094,219.449 201.174,215.409 C 205.744,210.885 210.277,206.323 214.820,201.772 C 219.604,196.979 219.625,192.986 214.875,188.234 C 202.821,176.176 190.758,164.126 178.703,152.067 C 177.966,151.330 177.276,150.545 176.052,149.234 C 177.072,148.505 178.050,147.990 178.798,147.244 C 190.946,135.141 203.071,123.015 215.186,110.879 C 219.497,106.562 219.468,102.336 215.129,97.975 C 210.593,93.416 206.046,88.869 201.488,84.333 C 196.990,79.857 192.921,79.875 188.395,84.398 C 176.266,96.519 164.148,108.652 152.020,120.775 C 151.285,121.510 150.505,122.198 149.281,123.343 C 148.498,122.305 147.944,121.360 147.195,120.608 C 135.094,108.459 122.974,96.328 110.842,84.209 C 106.595,79.966 102.384,79.935 98.169,84.113 C 93.532,88.708 88.923,93.331 84.319,97.960 C 79.872,102.431 79.907,106.542 84.431,111.071 C 96.413,123.065 108.398,135.055 120.407,147.021 C 121.226,147.837 122.252,148.445 123.794,149.613 Z M 0.000,249.123 C 0.000,182.846 0.000,116.569 0.000,50.292 C 0.188,49.761 0.471,49.243 0.551,48.696 C 3.987,25.263 19.994,7.493 42.978,1.654 C 45.400,1.039 47.853,0.548 50.292,0.000 C 116.569,0.000 182.846,0.000 249.123,0.000 C 249.849,0.206 250.576,0.409 251.301,0.620 C 256.325,2.084 261.667,2.887 266.317,5.128 C 288.026,15.585 299.262,33.170 299.343,57.225 C 299.551,118.893 299.413,180.562 299.408,242.231 C 299.408,243.497 299.374,244.764 299.315,246.029 C 298.103,271.986 278.918,294.140 253.249,298.296 C 245.150,299.607 236.755,299.358 228.494,299.370 C 171.405,299.451 114.315,299.443 57.225,299.399 C 29.890,299.378 8.168,282.361 1.488,255.886 C 0.924,253.649 0.493,251.378 0.000,249.123 Z"/>
+  <!--CLOSE BUTTON-->
+  <Viewbox x:Key="CloseButton_icon">
+    <Viewbox.Resources>
+      <!--HINT::Missing import/unknown namespace -->
+      <converter:TimeExceededConverter x:Key="TimeExceededConverter" />
+    </Viewbox.Resources>
+    <Canvas Width="300" Height="300">
+      <!-- Layer 1/<Group>/<Compound Path> -->
+      <Path Fill="Transparent" Data="F1 M 123.794,149.613 C 122.203,150.907 121.305,151.518 120.549,152.271 C 108.339,164.449 96.135,176.634 83.956,188.844 C 80.018,192.792 80.030,197.158 83.959,201.124 C 88.553,205.761 93.189,210.358 97.818,214.961 C 102.477,219.594 106.453,219.583 111.120,214.921 C 123.184,202.872 135.238,190.813 147.301,178.763 C 148.044,178.020 148.824,177.314 149.705,176.478 C 150.584,177.309 151.364,178.013 152.107,178.755 C 164.305,190.946 176.490,203.149 188.697,215.331 C 192.802,219.426 197.094,219.449 201.174,215.409 C 205.744,210.885 210.277,206.323 214.820,201.772 C 219.604,196.979 219.625,192.986 214.875,188.234 C 202.821,176.176 190.758,164.126 178.703,152.067 C 177.966,151.330 177.276,150.545 176.052,149.234 C 177.072,148.505 178.050,147.990 178.798,147.244 C 190.946,135.141 203.071,123.015 215.186,110.879 C 219.497,106.562 219.468,102.336 215.129,97.975 C 210.593,93.416 206.046,88.869 201.488,84.333 C 196.990,79.857 192.921,79.875 188.395,84.398 C 176.266,96.519 164.148,108.652 152.020,120.775 C 151.285,121.510 150.505,122.198 149.281,123.343 C 148.498,122.305 147.944,121.360 147.195,120.608 C 135.094,108.459 122.974,96.328 110.842,84.209 C 106.595,79.966 102.384,79.935 98.169,84.113 C 93.532,88.708 88.923,93.331 84.319,97.960 C 79.872,102.431 79.907,106.542 84.431,111.071 C 96.413,123.065 108.398,135.055 120.407,147.021 C 121.226,147.837 122.252,148.445 123.794,149.613 Z M 0.000,249.123 C 0.000,182.846 0.000,116.569 0.000,50.292 C 0.188,49.761 0.471,49.243 0.551,48.696 C 3.987,25.263 19.994,7.493 42.978,1.654 C 45.400,1.039 47.853,0.548 50.292,0.000 C 116.569,0.000 182.846,0.000 249.123,0.000 C 249.849,0.206 250.576,0.409 251.301,0.620 C 256.325,2.084 261.667,2.887 266.317,5.128 C 288.026,15.585 299.262,33.170 299.343,57.225 C 299.551,118.893 299.413,180.562 299.408,242.231 C 299.408,243.497 299.374,244.764 299.315,246.029 C 298.103,271.986 278.918,294.140 253.249,298.296 C 245.150,299.607 236.755,299.358 228.494,299.370 C 171.405,299.451 114.315,299.443 57.225,299.399 C 29.890,299.378 8.168,282.361 1.488,255.886 C 0.924,253.649 0.493,251.378 0.000,249.123 Z"/>
 
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent" Data="F1 M 0.000,249.123 C 0.493,251.378 0.924,253.649 1.488,255.886 C 8.168,282.361 29.890,299.378 57.225,299.399 C 114.315,299.443 171.405,299.451 228.494,299.370 C 236.755,299.358 245.150,299.607 253.249,298.296 C 278.918,294.140 298.103,271.986 299.315,246.029 C 299.374,244.764 299.408,243.497 299.408,242.231 C 299.413,180.562 299.551,118.893 299.343,57.225 C 299.262,33.170 288.026,15.585 266.317,5.128 C 261.667,2.887 256.325,2.084 251.301,0.620 C 250.576,0.409 249.849,0.206 249.123,0.000 C 266.082,0.000 283.041,0.000 300.000,0.000 C 300.000,100.000 300.000,200.000 300.000,300.000 C 200.000,300.000 100.000,300.000 0.000,300.000 C 0.000,283.041 0.000,266.082 0.000,249.123 Z"/>
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent" Data="F1 M 0.000,249.123 C 0.493,251.378 0.924,253.649 1.488,255.886 C 8.168,282.361 29.890,299.378 57.225,299.399 C 114.315,299.443 171.405,299.451 228.494,299.370 C 236.755,299.358 245.150,299.607 253.249,298.296 C 278.918,294.140 298.103,271.986 299.315,246.029 C 299.374,244.764 299.408,243.497 299.408,242.231 C 299.413,180.562 299.551,118.893 299.343,57.225 C 299.262,33.170 288.026,15.585 266.317,5.128 C 261.667,2.887 256.325,2.084 251.301,0.620 C 250.576,0.409 249.849,0.206 249.123,0.000 C 266.082,0.000 283.041,0.000 300.000,0.000 C 300.000,100.000 300.000,200.000 300.000,300.000 C 200.000,300.000 100.000,300.000 0.000,300.000 C 0.000,283.041 0.000,266.082 0.000,249.123 Z"/>
 
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Fill="Transparent" Data="F1 M 50.292,0.000 C 47.853,0.548 45.400,1.039 42.978,1.654 C 19.994,7.493 3.987,25.263 0.551,48.696 C 0.471,49.243 0.188,49.761 0.000,50.292 C 0.000,33.577 0.000,16.861 0.000,0.000 C 16.764,0.000 33.528,0.000 50.292,0.000 Z"/>
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Fill="Transparent" Data="F1 M 50.292,0.000 C 47.853,0.548 45.400,1.039 42.978,1.654 C 19.994,7.493 3.987,25.263 0.551,48.696 C 0.471,49.243 0.188,49.761 0.000,50.292 C 0.000,33.577 0.000,16.861 0.000,0.000 C 16.764,0.000 33.528,0.000 50.292,0.000 Z"/>
 
-            <!-- Layer 1/<Group>/<Path> -->
-            <Path Data="F1 M 123.794,149.613 C 122.252,148.445 121.226,147.837 120.407,147.021 C 108.398,135.055 96.413,123.065 84.431,111.071 C 79.907,106.542 79.872,102.431 84.319,97.960 C 88.923,93.331 93.532,88.708 98.169,84.113 C 102.384,79.935 106.595,79.966 110.842,84.209 C 122.974,96.328 135.094,108.459 147.195,120.608 C 147.944,121.360 148.498,122.305 149.281,123.343 C 150.505,122.198 151.285,121.510 152.020,120.775 C 164.148,108.652 176.266,96.519 188.395,84.398 C 192.921,79.875 196.990,79.857 201.488,84.333 C 206.046,88.869 210.593,93.416 215.129,97.975 C 219.468,102.336 219.497,106.562 215.186,110.879 C 203.071,123.015 190.946,135.141 178.798,147.244 C 178.050,147.990 177.072,148.505 176.052,149.234 C 177.276,150.545 177.966,151.330 178.703,152.067 C 190.758,164.126 202.821,176.176 214.875,188.234 C 219.625,192.986 219.604,196.979 214.820,201.772 C 210.277,206.323 205.744,210.885 201.174,215.409 C 197.094,219.449 192.802,219.426 188.697,215.331 C 176.490,203.149 164.305,190.946 152.107,178.755 C 151.364,178.013 150.584,177.309 149.705,176.478 C 148.824,177.314 148.044,178.020 147.301,178.763 C 135.238,190.813 123.184,202.872 111.120,214.921 C 106.453,219.583 102.477,219.594 97.818,214.961 C 93.189,210.358 88.553,205.761 83.959,201.124 C 80.030,197.158 80.018,192.792 83.956,188.844 C 96.135,176.634 108.339,164.449 120.549,152.271 C 121.305,151.518 122.203,150.907 123.794,149.613 Z">
-                <Path.Style>
-                    <Style TargetType="Path">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Path=IsMouseOver, 
+      <!-- Layer 1/<Group>/<Path> -->
+      <Path Data="F1 M 123.794,149.613 C 122.252,148.445 121.226,147.837 120.407,147.021 C 108.398,135.055 96.413,123.065 84.431,111.071 C 79.907,106.542 79.872,102.431 84.319,97.960 C 88.923,93.331 93.532,88.708 98.169,84.113 C 102.384,79.935 106.595,79.966 110.842,84.209 C 122.974,96.328 135.094,108.459 147.195,120.608 C 147.944,121.360 148.498,122.305 149.281,123.343 C 150.505,122.198 151.285,121.510 152.020,120.775 C 164.148,108.652 176.266,96.519 188.395,84.398 C 192.921,79.875 196.990,79.857 201.488,84.333 C 206.046,88.869 210.593,93.416 215.129,97.975 C 219.468,102.336 219.497,106.562 215.186,110.879 C 203.071,123.015 190.946,135.141 178.798,147.244 C 178.050,147.990 177.072,148.505 176.052,149.234 C 177.276,150.545 177.966,151.330 178.703,152.067 C 190.758,164.126 202.821,176.176 214.875,188.234 C 219.625,192.986 219.604,196.979 214.820,201.772 C 210.277,206.323 205.744,210.885 201.174,215.409 C 197.094,219.449 192.802,219.426 188.697,215.331 C 176.490,203.149 164.305,190.946 152.107,178.755 C 151.364,178.013 150.584,177.309 149.705,176.478 C 148.824,177.314 148.044,178.020 147.301,178.763 C 135.238,190.813 123.184,202.872 111.120,214.921 C 106.453,219.583 102.477,219.594 97.818,214.961 C 93.189,210.358 88.553,205.761 83.959,201.124 C 80.030,197.158 80.018,192.792 83.956,188.844 C 96.135,176.634 108.339,164.449 120.549,152.271 C 121.305,151.518 122.203,150.907 123.794,149.613 Z">
+        <Path.Style>
+          <Style TargetType="Path">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding Path=IsMouseOver, 
                                                 RelativeSource={RelativeSource AncestorType=Viewbox}}" Value="True">
-                                <Setter Property="Fill" Value="{StaticResource IsSelectedIcon}" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding Path=IsMouseOver, 
+                <Setter Property="Fill" Value="{StaticResource IsSelectedIcon}" />
+              </DataTrigger>
+              <DataTrigger Binding="{Binding Path=IsMouseOver, 
                                                 RelativeSource={RelativeSource AncestorType=Viewbox}}" Value="False">
-                                <Setter Property="Fill" Value="{StaticResource IsNOTSelectedIcon}" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Path.Style>
-            </Path>
-        </Canvas>
-    </Viewbox>
+                <Setter Property="Fill" Value="{StaticResource IsNOTSelectedIcon}" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Path.Style>
+      </Path>
+    </Canvas>
+  </Viewbox>
 
 </ResourceDictionary>

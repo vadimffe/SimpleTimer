@@ -13,124 +13,124 @@
         WindowStyle="None" ResizeMode="CanResizeWithGrip"
         AllowsTransparency="True" MouseDown="Window_MouseDown" Opacity="0.98" MinHeight="320" MinWidth="750">
 
-    <!--<Window.Clip>
+  <!--<Window.Clip>
         <RectangleGeometry Rect="0,0,857,483" RadiusX="42" RadiusY="42"/>
     </Window.Clip>-->
 
-    <Window.Resources>
-        <!-- HINT:: Refernced class in other assembly/project and declared internal. 
+  <Window.Resources>
+    <!-- HINT:: Refernced class in other assembly/project and declared internal. 
         Therefore the class is not visible in current assmbly/outside the referenced type's assembly: see HINT for fix -->
-        <converter:TimeExceededConverter x:Key="TimeExceededConverter"></converter:TimeExceededConverter>
-    </Window.Resources>
+    <converter:TimeExceededConverter x:Key="TimeExceededConverter"></converter:TimeExceededConverter>
+  </Window.Resources>
 
-    <Grid x:Name="RootGrid" Margin="0,0,0,0">
+  <Grid x:Name="RootGrid" Margin="0,0,0,0">
 
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                <GradientStop Color="#000000" Offset="0.0" />
-                <GradientStop Color="#04619F" Offset="0.9" />
-                <GradientStop Color="#04619F" Offset="1.0" />
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid.Background>
+      <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+        <GradientStop Color="#000000" Offset="0.0" />
+        <GradientStop Color="#04619F" Offset="0.9" />
+        <GradientStop Color="#04619F" Offset="1.0" />
+      </LinearGradientBrush>
+    </Grid.Background>
 
-        <!--DEFINITIONS-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="30" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="100" />
-        </Grid.RowDefinitions>
+    <!--DEFINITIONS-->
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="100" />
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="30" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="100" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="100" />
+    </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Orientation="Horizontal"
+    <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Orientation="Horizontal"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Center">
-            <ContentControl Grid.Row="0" Grid.Column="0" 
+      <ContentControl Grid.Row="0" Grid.Column="0" 
                Content="{StaticResource ClockTimeExceeded_icon}" 
                Foreground="{Binding Path=CurrentTime, Converter={StaticResource TimeExceededConverter}}" 
                             Margin="20,20,20,20"  />
-        </StackPanel>
+    </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Orientation="Horizontal"
+    <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Orientation="Horizontal"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
-            <Border BorderBrush="{x:Null}" Margin="10,0,10,0">
-                <TextBlock Text="T I M E    L I M I T" HorizontalAlignment="Center" VerticalAlignment="Center"
+      <Border BorderBrush="{x:Null}" Margin="10,0,10,0">
+        <TextBlock Text="T I M E    L I M I T" HorizontalAlignment="Center" VerticalAlignment="Center"
                                 FontSize="16" FontWeight="Bold" Foreground="#FFB2C6F3"/>
-            </Border>
+      </Border>
 
-            <materialDesign:TimePicker x:Name="TimePicker" Style="{DynamicResource MaterialDesignTimePicker}" 
+      <materialDesign:TimePicker x:Name="TimePicker" Style="{DynamicResource MaterialDesignTimePicker}" 
                                        SelectedTime="{Binding HoursLimitProp, UpdateSourceTrigger=LostFocus}" 
                                        Margin="10,0,10,0"/>
 
-            <!--timepicker:MainWindow-->
-            <!--viewModel:ViewModel-->
+      <!--timepicker:MainWindow-->
+      <!--viewModel:ViewModel-->
 
-            <!--<Button Command="{Binding UpdateTimeLimitCommand}" Margin="10,0,10,0"
+      <!--<Button Command="{Binding UpdateTimeLimitCommand}" Margin="10,0,10,0"
                         Width="130" Cursor="Hand" Style="{StaticResource Update_button}"></Button>-->
-            <Button Command="{Binding PauseTimerCommand}" Margin="10,0,10,0"
+      <Button Command="{Binding PauseTimerCommand}" Margin="10,0,10,0"
                         Cursor="Hand" Width="130" Style="{StaticResource Pause_button}"></Button>
-        </StackPanel>
+    </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" Orientation="Horizontal"
+    <StackPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1" Orientation="Horizontal"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
 
-        </StackPanel>
+    </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="1" Orientation="Horizontal"
+    <StackPanel Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="1" Orientation="Horizontal"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right">
-            <Button Height="30" Width="30" Cursor="Hand" Background="Transparent" 
+      <Button Height="30" Width="30" Cursor="Hand" Background="Transparent" 
                     BorderBrush="Transparent" 
                     Content="{StaticResource CloseButton_icon}" PreviewMouseDown="Button_PreviewMouseDown" >
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="Transparent"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </StackPanel>
+        <Button.Style>
+          <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                  <Border Background="{TemplateBinding Background}">
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  </Border>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent"/>
+              </Trigger>
+            </Style.Triggers>
+          </Style>
+        </Button.Style>
+      </Button>
+    </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="0"
+    <StackPanel Grid.Row="3" Grid.Column="0"
                 Orientation="Horizontal"
                 HorizontalAlignment="Right">
-            <ContentControl Content="{StaticResource PlayButton_icon}" 
+      <ContentControl Content="{StaticResource PlayButton_icon}" 
                             Margin="20,20,20,20"/>
-        </StackPanel>
+    </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right">
+    <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right">
 
-        </StackPanel>
+    </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" 
+    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" 
                     Orientation="Horizontal" 
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Center">
-            <TextBlock FontFamily="Century Gothic"
+      <TextBlock FontFamily="Century Gothic"
                Foreground="{Binding Path=CurrentTime, Converter={StaticResource TimeExceededConverter}}"
                FontSize="100" x:Name="lblTime" Text="{Binding Path=CurrentTime}"/>
-        </StackPanel>
+    </StackPanel>
 
-    </Grid>
+  </Grid>
 </Window>
