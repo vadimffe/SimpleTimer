@@ -12,7 +12,7 @@ namespace SimpleTimer.Models.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
     internal sealed partial class ApplicationSettings : global::System.Configuration.ApplicationSettingsBase {
         
         private static ApplicationSettings defaultInstance = ((ApplicationSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new ApplicationSettings())));
@@ -26,47 +26,47 @@ namespace SimpleTimer.Models.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string userAlias {
+        public string UserAlias {
             get {
-                return ((string)(this["userAlias"]));
+                return ((string)(this["UserAlias"]));
             }
             set {
-                this["userAlias"] = value;
+                this["UserAlias"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string userEmail {
+        public string UserEmail {
             get {
-                return ((string)(this["userEmail"]));
+                return ((string)(this["UserEmail"]));
             }
             set {
-                this["userEmail"] = value;
+                this["UserEmail"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime lastLoginTimeStamp {
+        public global::System.DateTime LastLoginTimeStamp {
             get {
-                return ((global::System.DateTime)(this["lastLoginTimeStamp"]));
+                return ((global::System.DateTime)(this["LastLoginTimeStamp"]));
             }
             set {
-                this["lastLoginTimeStamp"] = value;
+                this["LastLoginTimeStamp"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("00:02")]
-        public string timeLimit {
+        [global::System.Configuration.DefaultSettingValueAttribute("00.02")]
+        public string TimeLimit {
             get {
-                return ((string)(this["timeLimit"]));
+                return ((string)(this["TimeLimit"]));
             }
             set {
-                this["timeLimit"] = value;
+                this["TimeLimit"] = value;
             }
         }
     }

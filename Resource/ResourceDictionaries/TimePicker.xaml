@@ -2,8 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:wpf="http://materialdesigninxaml.net/winfx/xaml/themes"
                     xmlns:converters="http://materialdesigninxaml.net/winfx/xaml/themes"
-                    xmlns:converterslocal="clr-namespace:SimpleTimer.Resources.Converter"
-                    xmlns:controlzEx="clr-namespace:ControlzEx;assembly=MaterialDesignThemes.Wpf">
+                    xmlns:converterslocal="clr-namespace:SimpleTimer.Resources.Converter">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ValidationErrorTemplate.xaml" />
@@ -22,11 +21,11 @@
 
     <converters:TextFieldHintVisibilityConverter x:Key="TextFieldHintVisibilityConverter" />
     <converters:MathConverter Operation="Divide" x:Key="DivisionMathConverter" />
-    <converters:TextFieldClearButtonVisibilityConverter x:Key="ClearButtonVisibilityConverter" />
+    <converterslocal:TextFieldClearButtonVisibilityConverter x:Key="ClearButtonVisibilityConverter" />
     <converters:NotConverter x:Key="NotConverter" />
     <converters:MathConverter x:Key="MathMultiplyConverter" Operation="Multiply" />
     <converterslocal:FloatingHintOffsetCalculationConverter x:Key="FloatingHintOffsetCalculationConverter" />
-    <converterslocal:PickerInnerPaddingConverter x:Key="PickerInnerPaddingConverter" />
+    <converters:PickerInnerPaddingConverter x:Key="PickerInnerPaddingConverter" />
 
     <Style x:Key="MaterialDesignTimePickerTextBox" TargetType="{x:Type wpf:TimePickerTextBox}">
         <Setter Property="Foreground" 
@@ -36,7 +35,7 @@
                 Value="{DynamicResource MaterialDesignTextBoxBorder}" />
         <Setter Property="BorderThickness" Value="0 0 0 1"/>
         <Setter Property="wpf:TextFieldAssist.TextBoxViewMargin" 
-                Value="{x:Static converterslocal:Constants.DefaultTextBoxViewMargin}" />
+                Value="{x:Static converters:Constants.DefaultTextBoxViewMargin}" />
         <Setter Property="CaretBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -45,7 +44,7 @@
         <Setter Property="Foreground" Value="#FFB2C6F3"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Padding" Value="{x:Static converterslocal:Constants.TextBoxDefaultPadding}" />
+        <Setter Property="Padding" Value="{x:Static converters:Constants.TextBoxDefaultPadding}" />
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Setter Property="Validation.ErrorTemplate" Value="{StaticResource MaterialDesignValidationErrorTemplate}"/>
@@ -174,7 +173,7 @@
                                             VerticalScrollBarVisibility="Hidden"
                                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                             UseLayoutRounding="{TemplateBinding UseLayoutRounding}"
-                                            converterslocal:ScrollViewerAssist.IgnorePadding="True" />
+                                            converters:ScrollViewerAssist.IgnorePadding="True" />
                                         <wpf:SmartHint
                                             x:Name="Hint"
                                             Grid.Column="1"
@@ -345,7 +344,7 @@
                                 <Condition Property="wpf:TextFieldAssist.HasFilledTextField" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="grid" Property="Opacity" 
-                                    Value="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />
+                                    Value="{x:Static converters:Constants.TextBoxNotEnabledOpacity}" />
                             <Setter TargetName="border" Property="wpf:BottomDashedLineAdorner.IsAttached" Value="True" />
                             <!--<Setter TargetName="borderUnderline" Property="Height" Value="0" />-->
                         </MultiTrigger>
@@ -355,7 +354,7 @@
                                 <Condition Property="wpf:TextFieldAssist.HasFilledTextField" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="border" Property="Opacity" 
-                                    Value="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />
+                                    Value="{x:Static converters:Constants.TextBoxNotEnabledOpacity}" />
                             <!--<Setter TargetName="borderUnderline" Property="Opacity" 
                                     Value="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />-->
                             <!--<Setter TargetName="borderUnderline" Property="Height" Value="1" />-->
@@ -368,20 +367,20 @@
                             <Setter Property="BorderBrush" 
                                     Value="{DynamicResource MaterialDesignTextAreaInactiveBorder}" />
                             <Setter TargetName="PrefixTextBlock" Property="Opacity" 
-                                    Value="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />
+                                    Value="{x:Static converters:Constants.TextBoxNotEnabledOpacity}" />
                             <Setter TargetName="PART_ContentHost" Property="Opacity" 
-                                    Value="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />
+                                    Value="{x:Static converters:Constants.TextBoxNotEnabledOpacity}" />
                             <Setter TargetName="SuffixTextBlock" Property="Opacity" 
-                                    Value="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />
+                                    Value="{x:Static converters:Constants.TextBoxNotEnabledOpacity}" />
                             <Setter TargetName="PART_ClearButton" Property="Opacity" 
-                                    Value="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />
+                                    Value="{x:Static converters:Constants.TextBoxNotEnabledOpacity}" />
                             <Setter TargetName="HintWrapper" Property="Opacity">
                                 <Setter.Value>
                                     <Binding
                                         Path="(wpf:HintAssist.HintOpacity)"
                                         RelativeSource="{RelativeSource TemplatedParent}"
                                         Converter="{StaticResource MathMultiplyConverter}"
-                                        ConverterParameter="{x:Static converterslocal:Constants.TextBoxNotEnabledOpacity}" />
+                                        ConverterParameter="{x:Static converters:Constants.TextBoxNotEnabledOpacity}" />
                                 </Setter.Value>
                             </Setter>
                         </MultiTrigger>
@@ -475,9 +474,9 @@
         <Setter Property="BorderThickness" Value="0 0 0 0"/>
         <Setter Property="Is24Hours" Value="True"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="{x:Static converterslocal:Constants.TextBoxDefaultPadding}" />
+        <Setter Property="Padding" Value="{x:Static converters:Constants.TextBoxDefaultPadding}" />
         <Setter Property="wpf:TextFieldAssist.TextBoxViewMargin" 
-                Value="{x:Static converterslocal:Constants.DefaultTextBoxViewMargin}" />
+                Value="{x:Static converters:Constants.DefaultTextBoxViewMargin}" />
         <Setter Property="Validation.ErrorTemplate" Value="{StaticResource MaterialDesignValidationErrorTemplate}"/>
         <Setter Property="wpf:TextFieldAssist.UnderlineBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="wpf:HintAssist.Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
@@ -596,14 +595,14 @@
                             <Setter Property="Background" 
                                     Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
                             <Setter Property="wpf:TextFieldAssist.TextBoxViewMargin" 
-                                    Value="{x:Static converterslocal:Constants.DefaultTextBoxViewMarginEmbedded}" />
+                                    Value="{x:Static converters:Constants.DefaultTextBoxViewMarginEmbedded}" />
                         </Trigger>
                         <Trigger Property="wpf:TextFieldAssist.HasOutlinedTextField" 
                                  Value="True">
                             <Setter Property="Padding" Value="16" />
                             <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextAreaBorder}" />
                             <Setter Property="wpf:TextFieldAssist.TextBoxViewMargin" 
-                                    Value="{x:Static converterslocal:Constants.DefaultTextBoxViewMarginEmbedded}" />
+                                    Value="{x:Static converters:Constants.DefaultTextBoxViewMarginEmbedded}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -708,7 +707,7 @@
                            Text="{Binding CurrentItem.ErrorContent}" 
                            TextWrapping="Wrap" UseLayoutRounding="false"/>
             </Border>
-            <controlzEx:PopupEx x:Name="ValidationPopup" 
+            <wpf:PopupEx x:Name="ValidationPopup" 
                                 AllowsTransparency="True" 
                                 IsOpen="False" 
                                 Placement="{Binding AdornedElement.(converters:ValidationAssist.PopupPlacement), 
@@ -725,7 +724,7 @@
                                Text="{Binding CurrentItem.ErrorContent}" 
                                TextWrapping="Wrap" UseLayoutRounding="false"/>
                 </Border>
-            </controlzEx:PopupEx>
+            </wpf:PopupEx>
         </StackPanel>
         <ControlTemplate.Triggers>
             <MultiDataTrigger>
