@@ -78,16 +78,16 @@ namespace SimpleTimer.ViewModels
     private void LabelTimer()
     {
       this.SecondsAlreadyPassed = this.SecondsAlreadyPassed.Add(this.LabelTimerInterval);
-      this.CurrentTime = this.SecondsAlreadyPassed.ToString(@"hh\:mm\:ss"); // DateTime.Now.ToLongTimeString()
+      this.CurrentTime = this.SecondsAlreadyPassed; // DateTime.Now.ToLongTimeString()
 
       DateTime ringTime = HelperClass.DateTimeConverter(this.HoursLimitProp);
 
       //Debug.WriteLine("Current time: " + CurrentTime);
       //Debug.WriteLine("Ring time: " + RingTime.ToLongTimeString());
 
-      double currentTime = DateTime.Parse(this.CurrentTime, CultureInfo.InvariantCulture).TimeOfDay.TotalSeconds;
+      //double currentTime = DateTime.Parse(this.CurrentTime, CultureInfo.InvariantCulture).TimeOfDay.TotalSeconds;
 
-      if (currentTime == ringTime.TimeOfDay.TotalSeconds)
+      if (this.CurrentTime.TotalSeconds == ringTime.TimeOfDay.TotalSeconds)
       {
         HelperClass.PlaySound();
       }
@@ -101,9 +101,9 @@ namespace SimpleTimer.ViewModels
     /// <summary>
     /// Timer implementation, working time today
     /// <summary>
-    private string _currentTime;
+    private TimeSpan _currentTime;
 
-    public string CurrentTime
+    public TimeSpan CurrentTime
     {
       get
       {

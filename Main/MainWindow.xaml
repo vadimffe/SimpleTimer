@@ -13,15 +13,23 @@
         WindowStyle="None" ResizeMode="CanResizeWithGrip"
         AllowsTransparency="True" MouseDown="Window_MouseDown" Opacity="0.98" MinHeight="320" MinWidth="750">
 
-  <!--<Window.Clip>
-        <RectangleGeometry Rect="0,0,857,483" RadiusX="42" RadiusY="42"/>
-    </Window.Clip>-->
-
   <Window.Resources>
     <!-- HINT:: Refernced class in other assembly/project and declared internal. 
         Therefore the class is not visible in current assmbly/outside the referenced type's assembly: see HINT for fix -->
     <converter:TimeExceededConverter x:Key="TimeExceededConverter"></converter:TimeExceededConverter>
+    <converter:RectConverter x:Key="RectConverter"></converter:RectConverter>
   </Window.Resources>
+
+  <!--<Window.Clip>
+    <RectangleGeometry RadiusX="42" RadiusY="42">
+      <RectangleGeometry.Rect>
+        <MultiBinding Converter="{StaticResource RectConverter}">
+          <Binding ElementName="RootGrid" Path="ActualWidth"/>
+          <Binding ElementName="RootGrid" Path="ActualHeight"/>
+        </MultiBinding>
+      </RectangleGeometry.Rect>
+    </RectangleGeometry>
+  </Window.Clip>-->
 
   <Grid x:Name="RootGrid" Margin="0,0,0,0">
 
@@ -36,9 +44,9 @@
     <!--DEFINITIONS-->
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="100" />
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="100" />
+      <ColumnDefinition Width="300" />
+      <ColumnDefinition Width="250" />
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="30" />
     </Grid.ColumnDefinitions>
@@ -127,9 +135,13 @@
                     Orientation="Horizontal" 
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Center">
-      <TextBlock FontFamily="Century Gothic"
+      <TextBlock FontFamily="Century Gothic" VerticalAlignment="Center"
                Foreground="{Binding Path=CurrentTime, Converter={StaticResource TimeExceededConverter}}"
-               FontSize="100" x:Name="lblTime" Text="{Binding Path=CurrentTime}"/>
+               FontSize="120" x:Name="lblTime" Text="{Binding Path=CurrentTime, StringFormat=\{0:hh\\:mm\}}"/>
+      <Separator Width="20" Background="Transparent"/>
+      <TextBlock FontFamily="Century Gothic" VerticalAlignment="Center" FontWeight="Light"
+               Foreground="{Binding Path=CurrentTime, Converter={StaticResource TimeExceededConverter}}"
+               FontSize="60" x:Name="lblTimeSeconds" Text="{Binding Path=CurrentTime, StringFormat=\{0:ss\}}"/>
     </StackPanel>
 
   </Grid>

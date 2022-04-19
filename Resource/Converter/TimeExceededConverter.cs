@@ -12,14 +12,14 @@ namespace SimpleTimer.Resources.Converter
 
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-      string HoursLimitProp = (string)value;
+      //string HoursLimitProp = (string)value;
 
-      TimeSpan res;
-      bool result = TimeSpan.TryParseExact(HoursLimitProp, @"hh\:mm\:ss", CultureInfo.InvariantCulture, out res);
+      //TimeSpan res;
+      //bool result = TimeSpan.TryParseExact(HoursLimitProp, @"hh\:mm\:ss", CultureInfo.InvariantCulture, out res);
 
       TimeSpan RingTime = HelperClass.ParseToTimeSpanRingTime();
 
-      if (res > RingTime)
+      if ((TimeSpan)value > RingTime)
       {
         return Brushes.Red;
       }
