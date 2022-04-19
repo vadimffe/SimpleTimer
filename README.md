@@ -10,4 +10,4 @@ Simple timer where you can set your time to execute "ring a bell" command.
 * Screen Lock/Unlock SessionEvent listener
 * WPF
 
-![GitHub Logo](https://user-images.githubusercontent.com/72302395/102765102-d7312b80-4384-11eb-97fd-a911872493e2.png)
+![image](https://user-images.githubusercontent.com/72302395/164019184-019010e7-c04c-48ce-a41f-61bfe697b763.png)
