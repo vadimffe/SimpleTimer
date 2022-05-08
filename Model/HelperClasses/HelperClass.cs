@@ -46,11 +46,9 @@ namespace SimpleTimer.Models.HelperClasses
     {
       try
       {
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(string.Concat(System.IO.Directory.GetCurrentDirectory(),
-                @"\Miscellaneous\Sounds\bell.wav"));
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(string.Concat(System.IO.Directory.GetCurrentDirectory(), 
+          @"\Miscellaneous\Sounds\bell.wav"));
         player.Play();
-
-        //Debug.WriteLine("+++++++++ bell ring +++++++++");
 
       }
       catch (Exception)
